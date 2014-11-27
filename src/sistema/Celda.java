@@ -1,5 +1,3 @@
-// Beca, Garcia y Moscheni
-
 package sistema;
 
 import java.util.concurrent.locks.Condition;
@@ -136,6 +134,7 @@ public class Celda {
 
 
 			exp.getCelda().getPos().setX(exp.getCelda().getPos().getX()-1);
+			ocupado.signal();
 
 			// Estos if anidados verifica de que equipo es la persona que ocupa el casillero
 			// y tambien se encarga de verificar si hay algun tesoro del equipo contrario para conquistar
@@ -177,6 +176,7 @@ public class Celda {
 
 
 			exp.getCelda().getPos().setX(exp.getCelda().getPos().getX()+1);
+			ocupado.signal();
 
 			// Estos if anidados verifica de que equipo es la persona que ocupa el casillero
 			// y tambien se encarga de verificar si hay algun tesoro del equipo contrario para conquistar
